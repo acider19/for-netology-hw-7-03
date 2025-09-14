@@ -61,7 +61,7 @@ resource "yandex_compute_instance" "web_a" {
   }
 
   metadata = {
-    user-data          = file("./cloud-init.yml")
+    user-data          = file("./cloud-init.yaml")
     serial-port-enable = 1
   }
 
@@ -95,7 +95,7 @@ resource "yandex_compute_instance" "web_b" {
   }
 
   metadata = {
-    user-data          = file("./cloud-init.yml")
+    user-data          = file("./cloud-init.yaml")
     serial-port-enable = 1
   }
 
@@ -129,7 +129,7 @@ resource "yandex_compute_instance" "wrong_b" {
   }
 
   metadata = {
-    user-data          = file("./cloud-init.yml")
+    user-data          = file("./cloud-init.yaml")
     serial-port-enable = 1
   }
 
