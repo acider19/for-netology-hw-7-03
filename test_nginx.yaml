@@ -1,0 +1,12 @@
+- name: Проверить версию Nginx
+  hosts: your_servers
+  tasks:
+    - name: Выполнить команду nginx -v
+      ansible.builtin.command: nginx -v
+      register: nginx_version
+      ignore_errors: yes
+
+    - name: Вывести результат
+      ansible.builtin.debug:
+        - msg: "{{ nginx_version.stdout }}"
+        - msg: "Nginx installed!"
