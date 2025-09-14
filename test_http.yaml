@@ -1,0 +1,12 @@
+- name: Test HTTP access from target host
+  hosts: webservers
+  tasks:
+    - name: Check webpage
+      uri:
+        url: "${yandex_compute_instance.web_a.network_interface.0.ip_address}:80"
+        status_code: 200
+      register: http_result
+
+    - name: Show result
+      debug:
+        var: http_result.status
