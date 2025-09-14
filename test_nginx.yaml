@@ -1,5 +1,10 @@
-- name: Проверить версию Nginx
-  hosts: your_servers
+---
+- name: test nginx install
+  gather_facts: false
+  hosts: webservers
+  vars:
+    ansible_ssh_user: user
+  become: yes
   tasks:
     - name: Выполнить команду nginx -v
       ansible.builtin.command: nginx -v
@@ -8,4 +13,5 @@
 
     - name: Вывести результат
       ansible.builtin.debug:
-        msg: "{{ nginx_version.stdout }}"
+        - msg: "{{ nginx_version.stdout }}"
+        - msg: "Nginx installed!"
