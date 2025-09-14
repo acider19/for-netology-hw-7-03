@@ -13,4 +13,4 @@
 
     - name: Вывести результат
       ansible.builtin.debug:
-        - msg: "{{ nginx_version.stdout }}"
+        msg: "{{ nginx_version.stdout }}"
