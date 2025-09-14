@@ -1,12 +1,12 @@
-- name: Test HTTP access from target host
-  hosts: webservers
+- name: Check HTTP page via jump host
+  hosts: bastion # это может быть хост из инвентаря, представляющий jump host
+  gather_facts: false
   tasks:
-    - name: Check webpage
-      uri:
-        url: "http://${yandex_compute_instance.web_a.network_interface.0.ip_address}:80"
-        status_code: 200
+    - name: Check HTTP page
+      ansible.builtin.uri:
+      url: "http://10.0.1.13"
+      method: GET
       register: http_result
-
-    - name: Show result
+    - name: Print result
       debug:
-        var: http_result.status
+      var: http_result.status
