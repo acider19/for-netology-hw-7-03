@@ -1,0 +1,19 @@
+# Terraform generated files and directories
+.terraform/
+*.tfplan
+*.tfstate
+*.tfstate.backup
+crash.log
+.terraformrc
+terraform.rc
+
+# Sensitive files
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+
+# Local development and IDE files
+.vscode/
+.idea/
+*.swp
