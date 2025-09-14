@@ -4,9 +4,9 @@
   tasks:
     - name: Check HTTP page
       ansible.builtin.uri:
-      url: "http://10.0.1.13"
-      method: GET
+        url: "http://10.0.1.13"
+        method: GET
       register: http_result
     - name: Print result
-      debug:
-      var: http_result.status
+      ansible.builtin.debug:
+        var: http_result.status
