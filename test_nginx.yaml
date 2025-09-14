@@ -14,4 +14,3 @@
     - name: Вывести результат
       ansible.builtin.debug:
         - msg: "{{ nginx_version.stdout }}"
-        - msg: "Nginx installed!"
