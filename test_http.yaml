@@ -1,5 +1,5 @@
 - name: Check HTTP page via jump host
-  hosts: bastion # это может быть хост из инвентаря, представляющий jump host
+  hosts: bastion
   gather_facts: false
   tasks:
     - name: Check HTTP page
