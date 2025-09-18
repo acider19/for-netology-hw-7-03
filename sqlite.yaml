@@ -13,7 +13,7 @@
       state: "latest"
       update_cache: true
   - name: Выполнить команду sqlite3 -v
-    ansible.builtin.command: sqlite -v
+    ansible.builtin.command: sqlite3 -v
     register: sqlite_version
     ignore_errors: yes
 
