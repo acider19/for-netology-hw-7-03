@@ -12,8 +12,8 @@
       name: "mysql-server"
       state: "latest"
       update_cache: true
-  - name: Выполнить команду mysql -version
-    ansible.builtin.command: mysql -version
+  - name: Выполнить команду mysql --version
+    ansible.builtin.command: mysql --version
     register: mysql_version
     ignore_errors: yes
 
