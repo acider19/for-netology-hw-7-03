@@ -19,4 +19,4 @@
 
   - name: Вывести результат
     ansible.builtin.debug:
-      msg: "{{ sqlite_version.stderr }}"
+      msg: "{{ sqlite_version.stdout }}"
