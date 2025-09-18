@@ -1,0 +1,22 @@
+---
+- name: sqlite.yaml
+  gather_facts: false
+  hosts: db
+  vars:
+    ansible_ssh_user: user
+  become: yes
+
+  tasks:
+  - name: "Install sqlite via apt"
+    ansible.builtin.apt:
+      name: "sqlite3"
+      state: "latest"
+      update_cache: true
+  - name: Выполнить команду sqlite3 -v
+    ansible.builtin.command: sqlite -v
+    register: sqlite_version
+    ignore_errors: yes
+
+  - name: Вывести результат
+    ansible.builtin.debug:
+      msg: "{{ sqlite_version.stderr }}"
